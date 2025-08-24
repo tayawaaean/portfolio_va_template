@@ -8,7 +8,6 @@ import {
   Snackbar,
   Alert,
   useTheme,
-  useMediaQuery,
 } from '@mui/material';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
@@ -16,7 +15,6 @@ import { EMAILJS_CONFIG } from '../config/emailjs';
 
 const Contact: React.FC = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const formRef = useRef<HTMLFormElement>(null);
   
   const [formData, setFormData] = useState({

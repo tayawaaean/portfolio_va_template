@@ -1,6 +1,4 @@
-import React from 'react';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import { Box } from '@mui/material';
 import Header from './components/Header';
 import Hero from './components/Hero';

@@ -3,54 +3,21 @@ import {
   Box,
   Container,
   Typography,
-  Card,
-  CardContent,
   Button,
   useTheme,
-  useMediaQuery,
 } from '@mui/material';
 import { motion } from 'framer-motion';
-
-// Enhanced SVG icons with better visual appeal
-const BusinessIcon = () => (
-  <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/>
-  </svg>
-);
-
-const ScheduleIcon = () => (
-  <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
-  </svg>
-);
-
-const EmailIcon = () => (
-  <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-  </svg>
-);
-
-const AnalyticsIcon = () => (
-  <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-  </svg>
-);
-
-const SupportIcon = () => (
-  <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-  </svg>
-);
-
-const SecurityIcon = () => (
-  <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
-  </svg>
-);
+import { 
+  BusinessIcon, 
+  ScheduleIcon, 
+  EmailIcon, 
+  AnalyticsIcon, 
+  SupportIcon, 
+  SecurityIcon 
+} from './icons';
 
 const Services: React.FC = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   const services = [
     {
@@ -181,7 +148,7 @@ const Services: React.FC = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card
+              <Box
                 sx={{
                   height: '100%',
                   background: 'rgba(255, 255, 255, 0.95)',
@@ -204,7 +171,7 @@ const Services: React.FC = () => {
                   },
                 }}
               >
-                <CardContent sx={{ p: 4, height: '100%', display: 'flex', flexDirection: 'column' }}>
+                <Box sx={{ p: 4, height: '100%', display: 'flex', flexDirection: 'column' }}>
                   {/* Enhanced Icon Container */}
                   <Box 
                     className="icon-container"
@@ -323,8 +290,8 @@ const Services: React.FC = () => {
                       </motion.div>
                     ))}
                   </Box>
-                </CardContent>
-              </Card>
+                </Box>
+              </Box>
             </motion.div>
           ))}
         </Box>

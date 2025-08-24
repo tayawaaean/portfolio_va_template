@@ -4,13 +4,11 @@ import {
   Container,
   Typography,
   useTheme,
-  useMediaQuery,
 } from '@mui/material';
 import { motion } from 'framer-motion';
 
 const Experience: React.FC = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   const achievements = [
     { 

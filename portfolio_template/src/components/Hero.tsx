@@ -7,19 +7,12 @@ import {
   useTheme,
   useMediaQuery,
 } from '@mui/material';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-
-// Enhanced SVG icons
-const ArrowDownIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
-  </svg>
-);
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { ArrowDownIcon } from './icons';
 
 const Hero: React.FC = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const isSmallMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const { scrollY } = useScroll();
   

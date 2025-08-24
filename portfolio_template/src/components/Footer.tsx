@@ -3,15 +3,13 @@ import {
   Box,
   Container,
   Typography,
-  useTheme,
-  useMediaQuery,
   IconButton,
+  useTheme,
 } from '@mui/material';
 import { motion } from 'framer-motion';
 
 const Footer: React.FC = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const currentYear = new Date().getFullYear();
 
   const footerSections = [
