@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
     },
     {
       name: 'Email',
-      url: 'mailto:kimberlyreodique0619@gmail.com',
+      url: 'mailto:work.kmreodique@gmail.com',
       icon: '📧',
       color: '#EA4335'
     }
@@ -146,7 +146,7 @@ const Footer: React.FC = () => {
               <Box sx={{ mb: 4 }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                   <Typography variant="body2" sx={{ opacity: 0.9, fontSize: '0.9rem' }}>
-                    📧 kimberlyreodique0619@gmail.com
+                    📧 work.kmreodique@gmail.com
                   </Typography>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>

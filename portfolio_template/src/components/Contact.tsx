@@ -120,9 +120,9 @@ const Contact: React.FC = () => {
     {
       icon: '📧',
       title: 'Email',
-      value: 'kimberlyreodique0619@gmail.com',
+      value: 'work.kmreodique@gmail.com',
       description: 'I respond within 24 hours',
-      link: 'mailto:kimberlyreodique0619@gmail.com'
+      link: 'mailto:work.kmreodique@gmail.com'
     },
     {
       icon: '📱',
@@ -466,7 +466,7 @@ const Contact: React.FC = () => {
                 <Typography
                   variant="h5"
                   sx={{
-                    color: theme.palette.primary.main,
+                    color: 'white',
                     fontWeight: 700,
                     mb: 2,
                     fontSize: { xs: '1.25rem', md: '1.5rem' },

@@ -133,8 +133,7 @@ const About: React.FC = () => {
                 fontSize: { xs: '1rem', md: '1.1rem' },
               }}
             >
-              I'm an enthusiastic and dedicated Virtual Assistant with valuable experience in international business operations, 
-              specializing in administrative support and cross-cultural communication across various industries.
+              
             </Typography>
           </Box>
         </motion.div>
