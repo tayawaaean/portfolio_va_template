@@ -8,6 +8,7 @@ import {
   Snackbar,
   Alert,
   useTheme,
+  MenuItem,
 } from '@mui/material';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
@@ -264,7 +265,7 @@ const Contact: React.FC = () => {
                   <TextField
                     fullWidth
                     label="Full Name *"
-                    name="name"
+                    name="user_name"
                     value={formData.name}
                     onChange={handleInputChange}
                     required
@@ -287,7 +288,7 @@ const Contact: React.FC = () => {
                   <TextField
                     fullWidth
                     label="Email Address *"
-                    name="email"
+                    name="user_email"
                     type="email"
                     value={formData.email}
                     onChange={handleInputChange}
@@ -311,7 +312,7 @@ const Contact: React.FC = () => {
                   <TextField
                     fullWidth
                     label="Company Name"
-                    name="company"
+                    name="user_company"
                     value={formData.company}
                     onChange={handleInputChange}
                     variant="outlined"
@@ -334,7 +335,7 @@ const Contact: React.FC = () => {
                     fullWidth
                     select
                     label="Service Interest"
-                    name="service"
+                    name="user_service"
                     value={formData.service}
                     onChange={handleInputChange}
                     variant="outlined"
@@ -353,9 +354,9 @@ const Contact: React.FC = () => {
                     }}
                   >
                     {serviceOptions.map((option) => (
-                      <option key={option} value={option}>
+                      <MenuItem key={option} value={option}>
                         {option}
-                      </option>
+                      </MenuItem>
                     ))}
                   </TextField>
                 </Box>
@@ -363,7 +364,7 @@ const Contact: React.FC = () => {
                 <TextField
                   fullWidth
                   label="Message *"
-                  name="message"
+                  name="user_message"
                   value={formData.message}
                   onChange={handleInputChange}
                   required

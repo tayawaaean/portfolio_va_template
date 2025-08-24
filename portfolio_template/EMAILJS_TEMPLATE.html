@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>New Contact Form Submission</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+    
+    <div style="background: linear-gradient(135deg, #f8bbd9 0%, #e1bee7 100%); padding: 30px; border-radius: 15px; margin-bottom: 30px;">
+        <h1 style="color: #9c27b0; margin: 0; text-align: center; font-size: 28px;">New Contact Form Submission</h1>
+        <p style="text-align: center; margin: 10px 0 0 0; color: #666;">Portfolio Website Contact Form</p>
+    </div>
+
+    <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #9c27b0;">
+        <h2 style="color: #9c27b0; margin-top: 0; font-size: 22px;">Contact Details</h2>
+        
+        <div style="margin-bottom: 20px;">
+            <strong style="color: #555; display: inline-block; width: 120px;">Name:</strong>
+            <span style="color: #333;">{{user_name}}</span>
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+            <strong style="color: #555; display: inline-block; width: 120px;">Email:</strong>
+            <span style="color: #333;">{{user_email}}</span>
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+            <strong style="color: #555; display: inline-block; width: 120px;">Company:</strong>
+            <span style="color: #333;">{{user_company || 'Not specified'}}</span>
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+            <strong style="color: #555; display: inline-block; width: 120px;">Service Interest:</strong>
+            <span style="color: #333;">{{user_service || 'Not specified'}}</span>
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+            <strong style="color: #555; display: inline-block; width: 120px;">Message:</strong>
+            <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #e0e0e0; margin-top: 8px;">
+                {{user_message}}
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #e8f5e8; padding: 20px; border-radius: 12px; border-left: 4px solid #4caf50; margin-top: 25px;">
+        <h3 style="color: #2e7d32; margin-top: 0; font-size: 18px;">📧 Quick Actions</h3>
+        <p style="margin: 5px 0;">
+            <strong>Reply directly:</strong> <a href="mailto:{{user_email}}" style="color: #4caf50; text-decoration: none;">{{user_email}}</a>
+        </p>
+        <p style="margin: 5px 0;">
+            <strong>WhatsApp:</strong> <a href="https://wa.me/639155145953" style="color: #4caf50; text-decoration: none;">+63 915 514 5953</a>
+        </p>
+        <p style="margin: 5px 0;">
+            <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kimberly-reodique-3a195015a/" style="color: #4caf50; text-decoration: none;">kimberly-reodique</a>
+        </p>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px; padding: 20px; background: #f5f5f5; border-radius: 12px;">
+        <p style="margin: 0; color: #666; font-size: 14px;">
+            This message was sent from your portfolio website contact form.<br>
+            Sent on: {{sent_date}} at {{sent_time}}
+        </p>
+    </div>
+
+</body>
+</html>
