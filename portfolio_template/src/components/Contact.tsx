@@ -19,11 +19,11 @@ const Contact: React.FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
   
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    service: '',
-    message: '',
+    user_name: '',
+    user_email: '',
+    user_company: '',
+    user_service: '',
+    user_message: '',
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -41,10 +41,20 @@ const Contact: React.FC = () => {
     }));
   };
 
+  const handleSelectChange = (e: React.ChangeEvent<{ name?: string; value: unknown }>) => {
+    const { name, value } = e.target;
+    if (name) {
+      setFormData(prev => ({
+        ...prev,
+        [name]: value as string,
+      }));
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!formData.user_name || !formData.user_email || !formData.user_message) {
       setSnackbar({
         open: true,
         message: 'Please fill in all required fields.',
@@ -54,7 +64,7 @@ const Contact: React.FC = () => {
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
+    if (!emailRegex.test(formData.user_email)) {
       setSnackbar({
         open: true,
         message: 'Please enter a valid email address.',
@@ -82,11 +92,11 @@ const Contact: React.FC = () => {
         });
 
         setFormData({
-          name: '',
-          email: '',
-          company: '',
-          service: '',
-          message: '',
+          user_name: '',
+          user_email: '',
+          user_company: '',
+          user_service: '',
+          user_message: '',
         });
       }
     } catch (error) {
@@ -266,7 +276,7 @@ const Contact: React.FC = () => {
                     fullWidth
                     label="Full Name *"
                     name="user_name"
-                    value={formData.name}
+                    value={formData.user_name}
                     onChange={handleInputChange}
                     required
                     variant="outlined"
@@ -290,7 +300,7 @@ const Contact: React.FC = () => {
                     label="Email Address *"
                     name="user_email"
                     type="email"
-                    value={formData.email}
+                    value={formData.user_email}
                     onChange={handleInputChange}
                     required
                     variant="outlined"
@@ -313,7 +323,7 @@ const Contact: React.FC = () => {
                     fullWidth
                     label="Company Name"
                     name="user_company"
-                    value={formData.company}
+                    value={formData.user_company}
                     onChange={handleInputChange}
                     variant="outlined"
                     sx={{
@@ -336,8 +346,8 @@ const Contact: React.FC = () => {
                     select
                     label="Service Interest"
                     name="user_service"
-                    value={formData.service}
-                    onChange={handleInputChange}
+                    value={formData.user_service}
+                    onChange={handleSelectChange}
                     variant="outlined"
                     sx={{
                       '& .MuiOutlinedInput-root': {
@@ -353,6 +363,9 @@ const Contact: React.FC = () => {
                       },
                     }}
                   >
+                    <MenuItem value="">
+                      <em>Select a service...</em>
+                    </MenuItem>
                     {serviceOptions.map((option) => (
                       <MenuItem key={option} value={option}>
                         {option}
@@ -365,7 +378,7 @@ const Contact: React.FC = () => {
                   fullWidth
                   label="Message *"
                   name="user_message"
-                  value={formData.message}
+                  value={formData.user_message}
                   onChange={handleInputChange}
                   required
                   multiline
